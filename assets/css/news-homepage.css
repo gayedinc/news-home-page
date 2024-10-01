@@ -312,6 +312,10 @@ p {
     display: none;
   }
 
+  .header-logo {
+    margin-bottom: 0;
+  }
+
   .desktop-only-img {
     /*desktoptaki img için*/
     display: block;
