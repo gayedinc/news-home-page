@@ -1,0 +1,426 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Inter", sans-serif;
+}
+
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+html {
+  background-color: #fffdfa;
+}
+
+.container {
+  padding-inline: 16px;
+  padding-top: 28px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.web-text {
+  margin-top: 32px;
+  margin-bottom: 64px;
+}
+
+.web-text-inner h1 {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 40px;
+  color: #00001a;
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+
+p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.web-text-inner p {
+  margin-bottom: 24px;
+}
+
+.web-text-inner p,
+.text-item p {
+  color: #5e607a;
+}
+
+.web-text-inner a {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 4.375px;
+  color: #fffdfa;
+  background-color: #f15d51;
+  padding: 13px 35px 11px 31px;
+  text-decoration: none;
+}
+
+.new-card {
+  padding: 24px 20px;
+  background-color: #00001a;
+  grid-area: news;
+}
+
+.new-card h2 {
+  color: #e9aa52;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 32px;
+  margin-bottom: 35px;
+}
+
+.card:not(:last-child) {
+  border-bottom: 1px solid #5e607a;
+  padding-bottom: 29px;
+}
+
+.card:not(:first-child) {
+  padding-top: 31px;
+}
+
+.card h3 {
+  color: #fffdfa;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 24px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #c5c6ce;
+}
+
+.footer-item {
+  display: flex;
+  flex-direction: column;
+  margin-top: 64px;
+  margin-bottom: 80px;
+}
+
+.item {
+  display: flex;
+  gap: 32px;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.text-item span {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 32px;
+  color: #c5c6ce;
+}
+
+.text-item h4 {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 24px;
+  color: #00001a;
+  margin-bottom: 9px;
+  margin-top: 12px;
+}
+
+.main-header {
+  grid-area: header;
+}
+
+.main-text {
+  grid-area: text;
+}
+
+.header-desktop {
+  display: none;
+}
+
+.desktop-menu ul {
+  display: none;
+}
+
+.menu-toggle-btn {
+  display: none;
+}
+
+/* Hamburger Menu İkonu için */
+.burger-icon,
+.cancel-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 11;
+}
+
+.burger-icon {
+  display: block;
+  z-index: 11;
+}
+
+.cancel-icon {
+  display: none;
+  z-index: 12;
+}
+
+.menu-toggle-btn:checked + label .burger-icon {
+  display: none;
+}
+
+.menu-toggle-btn:checked + label .cancel-icon {
+  display: block;
+}
+
+.menu-toggle-btn:checked + label + .mobile-menu-overlay {
+  display: block;
+}
+
+/* Fotoğraf için */
+.desktop-only-img {
+  display: none;
+}
+
+.mobile-only-img {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  grid-area: photo;
+  width: 100%;
+}
+
+.desktop-menu li,
+.mobile-menu li {
+  list-style-type: none;
+}
+
+.mobile-menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: rgba(255, 253, 250, 1);
+  padding-top: 86px;
+  padding-left: 24px;
+  width: 50%;
+  height: 100vh;
+  text-align: left;
+}
+
+.mobile-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  list-style: none;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.mobile-menu a {
+  color: #00001a;
+  text-decoration: none;
+}
+
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+@media (width >= 1280px) {
+  .container {
+    padding-top: 60px;
+    margin-inline: 165px;
+  }
+  .mobile-only-img {
+    /*mobildeki img için*/
+    display: none;
+  }
+
+  .header-mobile {
+    /*mobildeki hamburger için*/
+    display: none;
+  }
+
+  .desktop-only-img {
+    /*desktoptaki img için*/
+    display: block;
+    width: 100%;
+  }
+
+  .header-desktop {
+    /*desktoptaki navbar için*/
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+  }
+
+  .desktop-menu ul {
+    display: flex;
+    gap: 40px;
+  }
+
+  .desktop-menu a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #5e607a;
+  }
+
+  .desktop-menu a:hover {
+    color: #f15d51;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    justify-content: center;
+    align-items: start;
+  }
+
+  .new-card {
+    padding: 32px 24px;
+    grid-column: 2 / 3;
+    grid-row: 1;
+  }
+
+  .web-text {
+    grid-column: 1 / 2;
+    grid-row: 1;
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+
+  .web-text-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .main-header {
+    grid-column: 1 /2;
+  }
+
+  .main-text {
+    grid-column: 2 /3;
+  }
+
+  .web-text-inner h1 {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 56px;
+    color: #00001a;
+  }
+
+  .web-text-inner p {
+    margin-bottom: 29px;
+  }
+
+  /* Hover Özellikleri */
+  .web-text-inner a:hover {
+    background-color: #00001a;
+  }
+
+  .card h3:hover {
+    color: #e9aa52;
+  }
+
+  .text-item h4:hover {
+    color: #f15d51;
+  }
+
+  .web-text-inner,
+  .text-item p {
+    color: #5e607a;
+  }
+
+  .new-card h2 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .footer-item {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 64px;
+    margin-bottom: 80px;
+  }
+
+  .item:not(:last-child) {
+    margin-bottom: 0px;
+  }
+
+  .item {
+    gap: 24px;
+  }
+}
