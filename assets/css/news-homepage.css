@@ -78,6 +78,10 @@ html {
   z-index: 10;
 }
 
+.header-logo {
+  margin-bottom: 60px;
+}
+
 .web-text {
   margin-top: 32px;
   margin-bottom: 64px;
